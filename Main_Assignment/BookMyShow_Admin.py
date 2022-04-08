@@ -22,7 +22,7 @@ class adminLogin:
         for i in range(rows,number+rows):
              Title=input("Enter Title: ")
              Genre=input("Enter Genre: ")
-             Length=input("Enter Length in hours: ")
+             Length=input("Enter Length: ")
              Cast=input("Enter Cast: ")
              Capacity=input("Enter Capacity: ")
              AdminRatings=input("Enter Admin Ratings out of 10: ")
@@ -35,8 +35,8 @@ class adminLogin:
         ws=wb.active
         rows=len(list(ws.rows))
         edit=input("Which movie you want to Edit: ")
-        range=ws["A1":"A"+str(rows)]
-        row_number=0
+        range=ws["A2":"A"+str(rows)]
+        row_number=1
         for movie in range:
             for x in movie:
                 row_number+=1
@@ -45,7 +45,7 @@ class adminLogin:
                     ws["A"+str(row_number)]=Title
                     Genre = input("enter new genre: ")
                     ws["B"+str(row_number)]=Genre
-                    Length = input("Enter new length in hours: ")
+                    Length = input("Enter new length: ")
                     ws["C"+str(row_number)]=Length
                     Cast = input("Enter new cast: ")
                     ws["D"+str(row_number)]=Cast
@@ -62,9 +62,8 @@ class adminLogin:
         ws = wb.active
         rows = len(list(ws.rows))
         delete = input("Which movie you want to delete: ")
-        print("Movie deleted")
-        range = ws["A1":"A" + str(rows)]
-        row_number = 0
+        range = ws["A2":"A" + str(rows)]
+        row_number = 1
         for movie in range:
             for x in movie:
                 row_number += 1
