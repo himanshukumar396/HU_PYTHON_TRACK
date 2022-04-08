@@ -1,6 +1,7 @@
 from Main_Assignment.BookMyShow_Admin import adminLogin
 from Main_Assignment.BookMyshow_UserRegistration import register
 
+
 obj_register = register()
 print("******Welcome To BookMyShow******* ")
 obj_Admin = adminLogin()
@@ -37,7 +38,6 @@ while True:
     elif user_input == "2":
         if obj_register.userregister():
             print()
-
         else:
             continue
     elif user_input == "3":
@@ -58,9 +58,12 @@ while True:
                     print("Press 3 for user ratings")
                     userChoice=input()
                     if userChoice=="2":
-                        obj_register.cancelTickets(choice)
+                        obj_register.cancelTickets(int(choice))
                     elif userChoice=="3":
-                        obj_register.Userratings(choice)
+                        obj_register.Userratings(int(choice))
+                    elif userChoice=="1":
+                        obj_register.Booktickets(int(choice))
+                        print()
                     else:
                         print("Enter valid input!")
         else:
